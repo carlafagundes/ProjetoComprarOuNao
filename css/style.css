@@ -1,0 +1,125 @@
+body{
+	font-family: 'Raleway', sans-serif;
+}
+
+/*------------------------------------------------- Início Header -------------------------------------------------*/
+
+#masthead{
+	background: url('../images/bg_header.jpg') repeat ;
+    height: 600px;
+}
+
+.header-wrapper {
+    text-align: center;
+    margin: 200px auto;
+    padding: 0 30px;
+    max-width: 600px;
+}
+
+.search-home input{
+	border-radius: 4px;
+    background-color: white;
+    color: #484848;
+    font-size: 14px;
+    height: 14px;
+    padding: 15px 0px;
+    text-align: left;
+    font-weight: 400;
+    padding-left: 10px;
+}
+
+.search-home button{
+    font-size: 14px;
+    padding: 12px 19px;
+    font-weight: 600;
+}
+
+.search-home i{
+    font-size: 18px;
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
+.search-submit{
+    background-color: #ffc600;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    text-align: center;
+    width: 110px;
+}
+
+.entry-subtitle {
+    font-weight: 600;
+    margin-bottom: 33px;
+    color: #fff;
+    font-size: 16px;
+}
+
+/*------------------------------------------------- Fim Header -------------------------------------------------*/
+
+/*------------------------------------------------- Início Section -------------------------------------------------*/
+
+.front-section{
+	padding: 40px 0;
+}
+
+.front-section h4, h6{
+	text-align: center;
+}
+
+.boxes{
+	padding-top: 50px;
+}
+
+.box{
+	text-align: center;
+	border: 1px solid rgba(0,0,0,0.075);
+	padding: 20px;
+}
+
+.box i, h5{
+	color: #ffc600;
+}
+
+.last{
+	background: #f9f9f9;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+    border-top: 1px solid rgba(0, 0, 0, 0.075);
+    text-align: left;
+}
+
+.last h6{
+	color: rgba(0,0,0,0.87);
+	text-align: left;
+	font-size: 1.2rem;
+}
+
+
+.last a{
+	color: rgba(0,0,0,0.87);
+	text-decoration: underline;
+}
+/*------------------------------------------------- Fim Section -------------------------------------------------*/
+
+/*------------------------------------------------- início Footer -------------------------------------------------*/
+
+footer{
+	text-align: center;
+	background: #031e2f;
+	padding: 20px 0;
+}
+
+footer p{
+	color: #b4c2d3;
+	font-size: 12px;
+}
+
+footer span{
+	color: #6c7988;
+	font-size: 10px;
+}
+/*------------------------------------------------- Fim Footer -------------------------------------------------*/
