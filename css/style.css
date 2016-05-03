@@ -121,7 +121,6 @@ body{
 
 .charts h4{
 	text-align: left;
-	padding-bottom: 20px;
 }
 
 .charts h6{
@@ -136,6 +135,15 @@ body{
 
 .paddingtopzero{
 	padding-top: 0;
+}
+
+.box-share {
+    margin-bottom: 20px;
+}
+
+.box-share li{
+    float: left;
+    padding-right: 20px;
 }
 /*------------------------------------------------- Fim Section -------------------------------------------------*/
 
