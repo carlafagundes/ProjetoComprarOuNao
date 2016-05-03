@@ -13,6 +13,11 @@
     <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--Import Chart-->
+	<script src="js/Chart.min.js"></script>
+    <script type="text/javascript">
+        var randomnb = function(){ return Math.round(Math.random()*100)};
+    </script>
 </head>
 <body>
 	<header id="header-inner">
@@ -43,10 +48,65 @@
 			</div>
 		</div>
 	</section>
-	<section>
+	<section class="front-section">
     	<div class="container">
-    		<div class="row">
-    			
+    		<div class="row charts">
+    			<div class="col l6 s1">
+    				<div class="box">
+    					<h5>Índice de Solução</h5>
+	    				<canvas id="GraficoDonut" class="chart"></canvas>
+	    				<script type="text/javascript">
+			                var options = {
+			                    responsive:true                    
+			                };
+
+			                var data = [
+			                    {
+			                        value: 60,
+			                        color:"#05d69d",
+			                        highlight: "#FF5A5E",
+			                        label: "Resolvido"
+			                    },
+			                    {
+			                        value: 40,
+			                        color: "#d60540",
+			                        highlight: "#FF5A5E",
+			                        label: "Não Resolvido"
+			                    }
+			                ]
+			                var ctx = document.getElementById("GraficoDonut").getContext("2d");
+			                var PizzaChart = new Chart(ctx).Doughnut(data, options);
+		            	</script>
+    				</div>
+    			</div>
+    			<div class="col l6 s1">
+    				<div class="box">
+    					<h5>Reclamações Respondidas</h5>
+	    				<canvas id="GraficoDonuts" class="chart" ></canvas>
+	    				<script type="text/javascript">
+			                var options = {
+			                    responsive:true                    
+			                };
+
+			                var data = [
+			                    {
+			                        value: 100,
+			                        color:"#ca05d6",
+			                        highlight: "#FF5A5E",
+			                        label: "Respondidas"
+			                    },
+			                    {
+			                        value: 0,
+			                        color:"#d60540",
+			                        highlight: "#FF5A5E",
+			                        label: "Não Respondidas"
+			                    }
+			                ]
+							var grafico = document.getElementById("GraficoDonuts").getContext("2d");
+							var PizzaCharts = new Chart(grafico).Doughnut(data, options);
+		            	</script>
+    				</div>
+    			</div>
     		</div>
     	</div>
 	</section>
