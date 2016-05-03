@@ -119,7 +119,12 @@ body{
 	text-decoration: underline;
 }
 
-.charts h5{
+.charts h4{
+	text-align: left;
+	padding-bottom: 20px;
+}
+
+.charts h6{
 	color: rgba(0,0,0,0.87);
 }
 
@@ -127,6 +132,10 @@ body{
 	margin-top: 20px;
 	width: 500px !important;
     height: auto !important;
+}
+
+.paddingtopzero{
+	padding-top: 0;
 }
 /*------------------------------------------------- Fim Section -------------------------------------------------*/
 

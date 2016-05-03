@@ -15,9 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!--Import Chart-->
 	<script src="js/Chart.min.js"></script>
-    <script type="text/javascript">
-        var randomnb = function(){ return Math.round(Math.random()*100)};
-    </script>
 </head>
 <body>
 	<header id="header-inner">
@@ -48,9 +45,10 @@
 			</div>
 		</div>
 	</section>
-	<section class="front-section">
+	<section class="front-section paddingtopzero">
     	<div class="container">
     		<div class="row charts">
+    			<h4>Carrefour</h4>
     			<div class="col l6 s1">
     				<div class="box">
     					<h5>Índice de Solução</h5>
@@ -74,8 +72,8 @@
 			                        label: "Não Resolvido"
 			                    }
 			                ]
-			                var ctx = document.getElementById("GraficoDonut").getContext("2d");
-			                var PizzaChart = new Chart(ctx).Doughnut(data, options);
+			                var graficopizza = document.getElementById("GraficoDonut").getContext("2d");
+			                var PizzaChart = new Chart(graficopizza).Doughnut(data, options);
 		            	</script>
     				</div>
     			</div>
@@ -102,14 +100,136 @@
 			                        label: "Não Respondidas"
 			                    }
 			                ]
-							var grafico = document.getElementById("GraficoDonuts").getContext("2d");
-							var PizzaCharts = new Chart(grafico).Doughnut(data, options);
+							var graficopizza2 = document.getElementById("GraficoDonuts").getContext("2d");
+							var PizzaCharts = new Chart(graficopizza2).Doughnut(data, options);
 		            	</script>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="row charts">
+    			<div class="col l6 s1">
+    				<div class="box">
+    					<h5>Índice de Satisfação</h5>
+    					<canvas id="GraficoPizza" class="chart"></canvas>
+			            <script type="text/javascript">
+			                var options = {
+			                    responsive:true
+			                };
+			                var data = [
+			                    {
+			                        value: 20,
+			                        color:"#0585d6",
+			                        highlight: "#FF5A5E",
+			                        label: "Satisfeito"
+			                    },
+			                    {
+			                        value: 80,
+			                        color: "#d60540",
+			                        highlight: "#FF5A5E",
+			                        label: "Não Satisfeito"
+			                    }
+			                ]
+							var graficopie = document.getElementById("GraficoPizza").getContext("2d");
+							var PizzaChart = new Chart(graficopie).Pie(data, options);    
+			            </script>   
+    				</div>
+    			</div>
+    			<div class="col l6 s1">
+    				<div class="box">
+    					<h5>Reclamações Finalizadas</h5>
+    					<canvas id="GraficoPizza2" class="chart"></canvas>
+			            <script type="text/javascript">
+			                var options = {
+			                    responsive:true
+			                };
+			                var data = [
+			                    {
+			                        value: 24,
+			                        color:"#ffc600",
+			                        highlight: "#FF5A5E",
+			                        label: "Reclamações Finalizadas"
+			                    }
+			                ]
+							var graficopie2 = document.getElementById("GraficoPizza2").getContext("2d");
+							var PizzaCharts = new Chart(graficopie2).Pie(data, options);    
+			            </script>
+	    				
+    				</div>
+    			</div>
+    		</div>
+    		<div class="row charts">
+    			<div class="col l6 s1">
+    				<div class="box">
+    					<h5>Prazo Médio de Respostas</h5>
+    					<canvas id="GraficoLine" class="chart"></canvas>
+			            <script type="text/javascript">                                        
+			                var options = {
+			                    responsive:true
+			                };
+
+			                var data = {
+			                    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+			                    datasets: [
+			                        {
+			                            label: "Dados secundários",
+			                            fillColor: "rgba(151,187,205,0.2)",
+			                            strokeColor: "rgba(151,187,205,1)",
+			                            pointColor: "rgba(151,187,205,1)",
+			                            pointStrokeColor: "#fff",
+			                            pointHighlightFill: "#fff",
+			                            pointHighlightStroke: "rgba(151,187,205,1)",
+			                            data: [5, 10, 20, 30, 5, 10, 20, 30, 5, 10, 20, 30]
+			                        }
+			                    ]
+			                };               
+			                var graficolinha = document.getElementById("GraficoLine").getContext("2d");
+			                var LineChart = new Chart(graficolinha).Line(data, options);          
+			            </script>
+    				</div>
+    			</div>
+    			<div class="col l6 s1">
+    				<div class="box">
+    					<h5>Índice de Solução x Reclamações Finalizadas</h5>
+	    				<canvas id="GraficoLine2" class="chart"></canvas>
+			            <script type="text/javascript">                                        
+			                var options = {
+			                    responsive:true
+			                };
+
+			                var data = {
+			                    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+			                    datasets: [
+			                        {
+			                            label: "Dados secundários",
+			                            fillColor: "rgba(151,187,205,0.2)",
+			                            strokeColor: "rgba(151,187,205,1)",
+			                            pointColor: "rgba(151,187,205,1)",
+			                            pointStrokeColor: "#fff",
+			                            pointHighlightFill: "#fff",
+			                            pointHighlightStroke: "rgba(151,187,205,1)",
+			                            data: [5, 10, 20, 30, 5, 10, 20, 30, 5, 10, 20, 30]
+			                        },
+			                        {
+			                            label: "Dados primários",
+			                            fillColor: "rgba(220,220,220,0.2)",
+			                            strokeColor: "rgba(220,220,220,1)",
+			                            pointColor: "rgba(220,220,220,1)",
+			                            pointStrokeColor: "#fff",
+			                            pointHighlightFill: "#fff",
+			                            pointHighlightStroke: "rgba(220,220,220,1)",
+			                            data: [30, 20, 10, 30, 20, 10, 30, 20, 10, 30, 20, 10]
+			                        }
+			                    ]
+			                };               
+			                var graficolinha2 = document.getElementById("GraficoLine2").getContext("2d");
+			                var LineCharts = new Chart(graficolinha2).Line(data, options);          
+			            </script>
     				</div>
     			</div>
     		</div>
     	</div>
 	</section>
+	
 	<footer>
 		<div class="container">
 			<div class="row">
