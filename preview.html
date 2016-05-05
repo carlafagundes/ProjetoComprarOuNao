@@ -49,46 +49,22 @@
 	<section class="front-section paddingtopzero">
     	<div class="container">
     		<div class="row charts">
-    			<div class="col l12">
-    			<h4>Empresa Pesquisada: Carrefour</h4>
-    				<div class="col l6 box-share">
-						<div class="col l2"></div>
-    					<ul>
-    						<li><a href="#"><img src="images/export.png" alt="Exportar" title="Exportar"></a></li>
-    						<li><a href="#"><img src="images/download.png" alt="Download" title="Download"></a></li>
-    						<li><a href="#"><img src="images/share.png" alt="Share" title="Compartilhar"></a></li>
-    					</ul>
+    			<div class="row">
+    				<div class="col l6">
+		    			<h4>Empresa Pesquisada: Carrefour</h4>
+		    			<div class="col l6 box-share">
+		    				<ul>
+		    					<li><a href="#"><img src="images/export.png" alt="Exportar" title="Exportar"></a></li>
+		    					<li><a href="#"><img src="images/download.png" alt="Download" title="Download"></a></li>
+		    					<li><a href="#"><img src="images/share.png" alt="Share" title="Compartilhar"></a></li>
+		    				</ul>
+		    			</div>
+    				</div>
+    			<div class="col l6">
+    				<div class="reclamacoesfinalizadas">
+    					<h5>Total de Reclamações Finalizadas: 11</h5>
     				</div>
     			</div>
-    			<div class="col l6 s1">
-    				<div class="box">
-    					<h5>Índice de Solução</h5>
-	    				<canvas id="GraficoDonut" class="chart"></canvas>
-	    				<div id="graficopizzaLegend"></div>
-	    				<script type="text/javascript">
-			                var options = {
-			                    responsive:true                    
-			                };
-
-			                var data = [
-			                    {
-			                        value: 60,
-			                        color:"#05d69d",
-			                        highlight: "#FF5A5E",
-			                        label: "Resolvido"
-			                    },
-			                    {
-			                        value: 40,
-			                        color: "#d60540",
-			                        highlight: "#FF5A5E",
-			                        label: "Não Resolvido"
-			                    }
-			                ]
-			                var graficopizza = document.getElementById("GraficoDonut").getContext("2d");
-			                var PizzaChart = new Chart(graficopizza).Doughnut(data, options);
-			                legend(document.getElementById("graficopizzaLegend"), data);
-		            	</script>
-    				</div>
     			</div>
     			<div class="col l6 s1">
     				<div class="box">
@@ -118,6 +94,37 @@
 							var PizzaCharts = new Chart(graficopizza2).Doughnut(data, options);
 							legend(document.getElementById("graficopizza2Legend"), data);
 		            	</script>
+    				</div>
+    			</div>	
+    			<div class="col l6 s1">
+    				<div class="box">
+    					<h5>Prazo Médio de Respostas</h5>
+    					<canvas id="GraficoLine" class="chart"></canvas>
+    					<div id="graficolinhaLegend"></div>
+			            <script type="text/javascript">                                        
+			                var options = {
+			                    responsive:true
+			                };
+
+			                var data = {
+			                    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+			                    datasets: [
+			                        {
+			                            label: "Prazo Médio de Respostas",
+			                            fillColor: "rgba(151,187,205,0.2)",
+			                            strokeColor: "rgba(151,187,205,1)",
+			                            pointColor: "rgba(151,187,205,1)",
+			                            pointStrokeColor: "#fff",
+			                            pointHighlightFill: "#fff",
+			                            pointHighlightStroke: "rgba(151,187,205,1)",
+			                            data: [5, 10, 20, 30, 5, 10, 20, 30, 5, 10, 20, 30]
+			                        }
+			                    ]
+			                };               
+			                var graficolinha = document.getElementById("GraficoLine").getContext("2d");
+			                var LineChart = new Chart(graficolinha).Line(data, options); 
+			                legend(document.getElementById("graficolinhaLegend"), data);           
+			            </script>
     				</div>
     			</div>
     		</div>
@@ -153,100 +160,32 @@
     			</div>
     			<div class="col l6 s1">
     				<div class="box">
-    					<h5>Reclamações Finalizadas</h5>
-    					<canvas id="GraficoPizza2" class="chart"></canvas>
-    					<div id="graficopie2Legend"></div>
-			            <script type="text/javascript">
+    					<h5>Índice de Solução</h5>
+	    				<canvas id="GraficoDonut" class="chart"></canvas>
+	    				<div id="graficopizzaLegend"></div>
+	    				<script type="text/javascript">
 			                var options = {
-			                    responsive:true
+			                    responsive:true                    
 			                };
+
 			                var data = [
 			                    {
-			                        value: 24,
-			                        color:"#ffc600",
+			                        value: 63.6,
+			                        color:"#05d69d",
 			                        highlight: "#FF5A5E",
-			                        label: "Reclamações Finalizadas"
+			                        label: "Resolvido"
+			                    },
+			                    {
+			                        value: 36.4,
+			                        color: "#d60540",
+			                        highlight: "#FF5A5E",
+			                        label: "Não Resolvido"
 			                    }
 			                ]
-							var graficopie2 = document.getElementById("GraficoPizza2").getContext("2d");
-							var PizzaCharts = new Chart(graficopie2).Pie(data, options); 
-							legend(document.getElementById("graficopie2Legend"), data);   
-			            </script>
-	    				
-    				</div>
-    			</div>
-    		</div>
-    		<div class="row charts">
-    			<div class="col l6 s1">
-    				<div class="box">
-    					<h5>Prazo Médio de Respostas</h5>
-    					<canvas id="GraficoLine" class="chart"></canvas>
-    					<div id="graficolinhaLegend"></div>
-			            <script type="text/javascript">                                        
-			                var options = {
-			                    responsive:true
-			                };
-
-			                var data = {
-			                    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
-			                    datasets: [
-			                        {
-			                            label: "Prazo Médio de Respostas",
-			                            fillColor: "rgba(151,187,205,0.2)",
-			                            strokeColor: "rgba(151,187,205,1)",
-			                            pointColor: "rgba(151,187,205,1)",
-			                            pointStrokeColor: "#fff",
-			                            pointHighlightFill: "#fff",
-			                            pointHighlightStroke: "rgba(151,187,205,1)",
-			                            data: [5, 10, 20, 30, 5, 10, 20, 30, 5, 10, 20, 30]
-			                        }
-			                    ]
-			                };               
-			                var graficolinha = document.getElementById("GraficoLine").getContext("2d");
-			                var LineChart = new Chart(graficolinha).Line(data, options); 
-			                legend(document.getElementById("graficolinhaLegend"), data);           
-			            </script>
-    				</div>
-    			</div>
-    			<div class="col l6 s1">
-    				<div class="box">
-    					<h5>Índice de Solução x Reclamações Finalizadas</h5>
-	    				<canvas id="GraficoLine2" class="chart"></canvas>
-	    				<div id="graficolinha2Legend"></div>
-			            <script type="text/javascript">                                        
-			                var options = {
-			                    responsive:true
-			                };
-
-			                var data = {
-			                    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
-			                    datasets: [
-			                        {
-			                            label: "Índice de Solução",
-			                            fillColor: "rgba(151,187,205,0.2)",
-			                            strokeColor: "rgba(151,187,205,1)",
-			                            pointColor: "rgba(151,187,205,1)",
-			                            pointStrokeColor: "#fff",
-			                            pointHighlightFill: "#fff",
-			                            pointHighlightStroke: "rgba(151,187,205,1)",
-			                            data: [5, 10, 20, 30, 5, 10, 20, 30, 5, 10, 20, 30]
-			                        },
-			                        {
-			                            label: "Reclamações Finalizadas",
-			                            fillColor: "rgba(220,220,220,0.2)",
-			                            strokeColor: "rgba(220,220,220,1)",
-			                            pointColor: "rgba(220,220,220,1)",
-			                            pointStrokeColor: "#fff",
-			                            pointHighlightFill: "#fff",
-			                            pointHighlightStroke: "rgba(220,220,220,1)",
-			                            data: [30, 20, 10, 30, 20, 10, 30, 20, 10, 30, 20, 10]
-			                        }
-			                    ]
-			                };               
-			                var graficolinha2 = document.getElementById("GraficoLine2").getContext("2d");
-			                var LineCharts = new Chart(graficolinha2).Line(data, options);  
-			                legend(document.getElementById("graficolinha2Legend"), data);          
-			            </script>
+			                var graficopizza = document.getElementById("GraficoDonut").getContext("2d");
+			                var PizzaChart = new Chart(graficopizza).Doughnut(data, options);
+			                legend(document.getElementById("graficopizzaLegend"), data);
+		            	</script>
     				</div>
     			</div>
     		</div>
