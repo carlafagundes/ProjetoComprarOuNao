@@ -145,6 +145,30 @@ body{
     float: left;
     padding-right: 20px;
 }
+
+.legend {
+    margin-top: 20px;
+    text-align: left !important;
+    border: 1px solid rgba(0,0,0,0.075);
+    padding: 20px;
+}
+
+.legend .title {
+    display: block;
+    margin-bottom: 0.5em;
+    line-height: 1.2em;
+    padding: 0 0.3em;
+}
+
+.legend .color-sample {
+    display: block;
+    float: left;
+    width: 1em;
+    height: 1em;
+    border: 2px solid;
+    border-radius: 0.5em; 
+    margin-right: 0.5em;
+}
 /*------------------------------------------------- Fim Section -------------------------------------------------*/
 
 /*------------------------------------------------- início Footer -------------------------------------------------*/

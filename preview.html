@@ -14,6 +14,7 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!--Import Chart-->
+    <script src="js/legend.js"></script>
 	<script src="js/Chart.min.js"></script>
 </head>
 <body>
@@ -63,6 +64,7 @@
     				<div class="box">
     					<h5>Índice de Solução</h5>
 	    				<canvas id="GraficoDonut" class="chart"></canvas>
+	    				<div id="graficopizzaLegend"></div>
 	    				<script type="text/javascript">
 			                var options = {
 			                    responsive:true                    
@@ -84,6 +86,7 @@
 			                ]
 			                var graficopizza = document.getElementById("GraficoDonut").getContext("2d");
 			                var PizzaChart = new Chart(graficopizza).Doughnut(data, options);
+			                legend(document.getElementById("graficopizzaLegend"), data);
 		            	</script>
     				</div>
     			</div>
@@ -91,6 +94,7 @@
     				<div class="box">
     					<h5>Reclamações Respondidas</h5>
 	    				<canvas id="GraficoDonuts" class="chart" ></canvas>
+	    				<div id="graficopizza2Legend"></div>
 	    				<script type="text/javascript">
 			                var options = {
 			                    responsive:true                    
@@ -112,6 +116,7 @@
 			                ]
 							var graficopizza2 = document.getElementById("GraficoDonuts").getContext("2d");
 							var PizzaCharts = new Chart(graficopizza2).Doughnut(data, options);
+							legend(document.getElementById("graficopizza2Legend"), data);
 		            	</script>
     				</div>
     			</div>
@@ -121,6 +126,7 @@
     				<div class="box">
     					<h5>Índice de Satisfação</h5>
     					<canvas id="GraficoPizza" class="chart"></canvas>
+    					<div id="graficopieLegend"></div>
 			            <script type="text/javascript">
 			                var options = {
 			                    responsive:true
@@ -140,7 +146,8 @@
 			                    }
 			                ]
 							var graficopie = document.getElementById("GraficoPizza").getContext("2d");
-							var PizzaChart = new Chart(graficopie).Pie(data, options);    
+							var PizzaChart = new Chart(graficopie).Pie(data, options);  
+							legend(document.getElementById("graficopieLegend"), data);  
 			            </script>   
     				</div>
     			</div>
@@ -148,6 +155,7 @@
     				<div class="box">
     					<h5>Reclamações Finalizadas</h5>
     					<canvas id="GraficoPizza2" class="chart"></canvas>
+    					<div id="graficopie2Legend"></div>
 			            <script type="text/javascript">
 			                var options = {
 			                    responsive:true
@@ -161,7 +169,8 @@
 			                    }
 			                ]
 							var graficopie2 = document.getElementById("GraficoPizza2").getContext("2d");
-							var PizzaCharts = new Chart(graficopie2).Pie(data, options);    
+							var PizzaCharts = new Chart(graficopie2).Pie(data, options); 
+							legend(document.getElementById("graficopie2Legend"), data);   
 			            </script>
 	    				
     				</div>
@@ -172,6 +181,7 @@
     				<div class="box">
     					<h5>Prazo Médio de Respostas</h5>
     					<canvas id="GraficoLine" class="chart"></canvas>
+    					<div id="graficolinhaLegend"></div>
 			            <script type="text/javascript">                                        
 			                var options = {
 			                    responsive:true
@@ -181,7 +191,7 @@
 			                    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
 			                    datasets: [
 			                        {
-			                            label: "Dados secundários",
+			                            label: "Prazo Médio de Respostas",
 			                            fillColor: "rgba(151,187,205,0.2)",
 			                            strokeColor: "rgba(151,187,205,1)",
 			                            pointColor: "rgba(151,187,205,1)",
@@ -193,7 +203,8 @@
 			                    ]
 			                };               
 			                var graficolinha = document.getElementById("GraficoLine").getContext("2d");
-			                var LineChart = new Chart(graficolinha).Line(data, options);          
+			                var LineChart = new Chart(graficolinha).Line(data, options); 
+			                legend(document.getElementById("graficolinhaLegend"), data);           
 			            </script>
     				</div>
     			</div>
@@ -201,6 +212,7 @@
     				<div class="box">
     					<h5>Índice de Solução x Reclamações Finalizadas</h5>
 	    				<canvas id="GraficoLine2" class="chart"></canvas>
+	    				<div id="graficolinha2Legend"></div>
 			            <script type="text/javascript">                                        
 			                var options = {
 			                    responsive:true
@@ -210,7 +222,7 @@
 			                    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
 			                    datasets: [
 			                        {
-			                            label: "Dados secundários",
+			                            label: "Índice de Solução",
 			                            fillColor: "rgba(151,187,205,0.2)",
 			                            strokeColor: "rgba(151,187,205,1)",
 			                            pointColor: "rgba(151,187,205,1)",
@@ -220,7 +232,7 @@
 			                            data: [5, 10, 20, 30, 5, 10, 20, 30, 5, 10, 20, 30]
 			                        },
 			                        {
-			                            label: "Dados primários",
+			                            label: "Reclamações Finalizadas",
 			                            fillColor: "rgba(220,220,220,0.2)",
 			                            strokeColor: "rgba(220,220,220,1)",
 			                            pointColor: "rgba(220,220,220,1)",
@@ -232,7 +244,8 @@
 			                    ]
 			                };               
 			                var graficolinha2 = document.getElementById("GraficoLine2").getContext("2d");
-			                var LineCharts = new Chart(graficolinha2).Line(data, options);          
+			                var LineCharts = new Chart(graficolinha2).Line(data, options);  
+			                legend(document.getElementById("graficolinha2Legend"), data);          
 			            </script>
     				</div>
     			</div>
