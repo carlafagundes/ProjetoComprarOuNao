@@ -62,131 +62,460 @@
     				</div>
     			<div class="col l6">
     				<div class="reclamacoesfinalizadas">
-    					<h5>Total de Reclamações Finalizadas: 11</h5>
+    					<h5>Total de Reclamações Finalizadas: 18</h5>
     				</div>
     			</div>
     			</div>
-    			<div class="col l6 s1">
-    				<div class="box">
-    					<h5>Reclamações Respondidas</h5>
-	    				<canvas id="GraficoDonuts" class="chart" ></canvas>
-	    				<div id="graficopizza2Legend"></div>
-	    				<script type="text/javascript">
-			                var options = {
-			                    responsive:true                    
-			                };
+    			<div class="row">
+	    			<div class="col l6 s1">
+	    				<div class="box">
+	    					<h5>Avaliação de Reclamação</h5>
+	    					<span>Valores em porcentagem</span>
+		    				<canvas id="GraficoDonutsavaliacao" class="chart" ></canvas>
+		    				<div id="legendaGraficoAvaliacao"></div>
+		    				<script type="text/javascript">
+				                var options = {
+				                    responsive:true                    
+				                };
 
-			                var data = [
-			                    {
-			                        value: 100,
-			                        color:"#ca05d6",
-			                        highlight: "#FF5A5E",
-			                        label: "Respondidas"
-			                    },
-			                    {
-			                        value: 0,
-			                        color:"#d60540",
-			                        highlight: "#FF5A5E",
-			                        label: "Não Respondidas"
-			                    }
-			                ]
-							var graficopizza2 = document.getElementById("GraficoDonuts").getContext("2d");
-							var PizzaCharts = new Chart(graficopizza2).Doughnut(data, options);
-							legend(document.getElementById("graficopizza2Legend"), data);
-		            	</script>
-    				</div>
-    			</div>	
-    			<div class="col l6 s1">
-    				<div class="box">
-    					<h5>Prazo Médio de Respostas</h5>
-    					<canvas id="GraficoLine" class="chart"></canvas>
-    					<div id="graficolinhaLegend"></div>
-			            <script type="text/javascript">                                        
-			                var options = {
-			                    responsive:true
-			                };
+				                var data = [
+				                    {
+				                        value: 61,
+				                        color:"#0585d6",
+				                        highlight: "#FF5A5E",
+				                        label: "Não Avaliada"
+				                    },
+				                    {
+				                        value: 28,
+				                        color:"#05d69d",
+				                        highlight: "#FF5A5E",
+				                        label: "Resolvida"
+				                    },
+				                    {
+				                        value: 11,
+				                        color:"#d60540",
+				                        highlight: "#FF5A5E",
+				                        label: "Não Resolvida"
+				                    }, 
+				                ]
+								var graficoAvaliacao = document.getElementById("GraficoDonutsavaliacao").getContext("2d");
+								var avaliacaoGrafico = new Chart(graficoAvaliacao).Doughnut(data, options);
+								legend(document.getElementById("legendaGraficoAvaliacao"), data);
+			            	</script>
+	    				</div>
+	    			</div>	
+	    			<div class="col l6 s1">
+	    				<div class="box">
+	    					<h5>Reclamação</h5>
+	    					<span>Valores em porcentagem</span>
+		    				<canvas id="GraficoDonutsReclamacao" class="chart" ></canvas>
+		    				<div id="legendaGraficoReclamacao"></div>
+		    				<script type="text/javascript">
+				                var options = {
+				                    responsive:true                    
+				                };
 
-			                var data = {
-			                    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
-			                    datasets: [
-			                        {
-			                            label: "Prazo Médio de Respostas",
-			                            fillColor: "rgba(151,187,205,0.2)",
-			                            strokeColor: "rgba(151,187,205,1)",
-			                            pointColor: "rgba(151,187,205,1)",
-			                            pointStrokeColor: "#fff",
-			                            pointHighlightFill: "#fff",
-			                            pointHighlightStroke: "rgba(151,187,205,1)",
-			                            data: [5, 10, 20, 30, 5, 10, 20, 30, 5, 10, 20, 30]
-			                        }
-			                    ]
-			                };               
-			                var graficolinha = document.getElementById("GraficoLine").getContext("2d");
-			                var LineChart = new Chart(graficolinha).Line(data, options); 
-			                legend(document.getElementById("graficolinhaLegend"), data);           
-			            </script>
-    				</div>
+				                var data = [
+				                    {
+				                        value: 100,
+				                        color:"#05d69d",
+				                        highlight: "#FF5A5E",
+				                        label: "Respondida"
+				                    },
+				                    {
+				                        value: 0,
+				                        color:"#d60540",
+				                        highlight: "#FF5A5E",
+				                        label: "Não Respondida"
+				                    }, 
+				                ]
+								var graficoReclamacao = document.getElementById("GraficoDonutsReclamacao").getContext("2d");
+								var reclamacaoGrafico = new Chart(graficoReclamacao).Doughnut(data, options);
+								legend(document.getElementById("legendaGraficoReclamacao"), data);
+			            	</script>
+	    				</div>
+	    			</div>
     			</div>
-    		</div>
-    		<div class="row charts">
-    			<div class="col l6 s1">
-    				<div class="box">
-    					<h5>Índice de Satisfação</h5>
-    					<canvas id="GraficoPizza" class="chart"></canvas>
-    					<div id="graficopieLegend"></div>
-			            <script type="text/javascript">
-			                var options = {
-			                    responsive:true
-			                };
-			                var data = [
-			                    {
-			                        value: 20,
-			                        color:"#0585d6",
-			                        highlight: "#FF5A5E",
-			                        label: "Satisfeito"
-			                    },
-			                    {
-			                        value: 80,
-			                        color: "#d60540",
-			                        highlight: "#FF5A5E",
-			                        label: "Não Satisfeito"
-			                    }
-			                ]
-							var graficopie = document.getElementById("GraficoPizza").getContext("2d");
-							var PizzaChart = new Chart(graficopie).Pie(data, options);  
-							legend(document.getElementById("graficopieLegend"), data);  
-			            </script>   
-    				</div>
-    			</div>
-    			<div class="col l6 s1">
-    				<div class="box">
-    					<h5>Índice de Solução</h5>
-	    				<canvas id="GraficoDonut" class="chart"></canvas>
-	    				<div id="graficopizzaLegend"></div>
-	    				<script type="text/javascript">
-			                var options = {
-			                    responsive:true                    
-			                };
+    			<div class="row">
+	    			<div class="col l6 s1">
+	    				<div class="box">
+	    					<h5>Procurou a Empresa</h5>
+	    					<span>Valores em porcentagem</span>
+		    				<canvas id="GraficoDonutsProcurouAEmpresa" class="chart" ></canvas>
+		    				<div id="legendaGraficoProcurouAEmpresa"></div>
+		    				<script type="text/javascript">
+				                var options = {
+				                    responsive:true                    
+				                };
 
-			                var data = [
-			                    {
-			                        value: 63.6,
-			                        color:"#05d69d",
-			                        highlight: "#FF5A5E",
-			                        label: "Resolvido"
-			                    },
-			                    {
-			                        value: 36.4,
-			                        color: "#d60540",
-			                        highlight: "#FF5A5E",
-			                        label: "Não Resolvido"
-			                    }
-			                ]
-			                var graficopizza = document.getElementById("GraficoDonut").getContext("2d");
-			                var PizzaChart = new Chart(graficopizza).Doughnut(data, options);
-			                legend(document.getElementById("graficopizzaLegend"), data);
-		            	</script>
-    				</div>
+				                var data = [
+				                    {
+				                        value: 89,
+				                        color:"#05d69d",
+				                        highlight: "#FF5A5E",
+				                        label: "Sim"
+				                    },
+				                    {
+				                        value: 11,
+				                        color:"#d60540",
+				                        highlight: "#FF5A5E",
+				                        label: "Não"
+				                    }, 
+				                ]
+								var graficoProcurouEmpresa = document.getElementById("GraficoDonutsProcurouAEmpresa").getContext("2d");
+								var procurouEmpresaGrafico = new Chart(graficoProcurouEmpresa).Doughnut(data, options);
+								legend(document.getElementById("legendaGraficoProcurouAEmpresa"), data);
+			            	</script>
+	    				</div>
+	    			</div>	
+	    			<div class="col l6 s1">
+	    				<div class="box">
+	    					<h5>Situação de Avaliação</h5>
+	    					<span>Valores em porcentagem</span>
+		    				<canvas id="GraficoDonutsSituacaoAvaliacao" class="chart" ></canvas>
+		    				<div id="legendaGraficoSituacaoAvaliacao"></div>
+		    				<script type="text/javascript">
+				                var options = {
+				                    responsive:true                    
+				                };
+
+				                var data = [
+				                    {
+				                        value: 39,
+				                        color:"#05d69d",
+				                        highlight: "#FF5A5E",
+				                        label: "Finalizada"
+				                    },
+				                    {
+				                        value: 61,
+				                        color:"#d60540",
+				                        highlight: "#FF5A5E",
+				                        label: "Não Finalizada"
+				                    }, 
+				                ]
+								var graficoSituacaoAvaliacao = document.getElementById("GraficoDonutsSituacaoAvaliacao").getContext("2d");
+								var situacaoAvaliacaoGrafico = new Chart(graficoSituacaoAvaliacao).Doughnut(data, options);
+								legend(document.getElementById("legendaGraficoSituacaoAvaliacao"), data);
+			            	</script>
+	    				</div>
+	    			</div>
+    			</div>
+    			<div class="row">
+	    			<div class="col l6 s1">
+	    				<div class="box">
+	    					<h5>Nota do Consumidor</h5>
+	    					<span>Valores em porcentagem</span>
+		    				<canvas id="GraficoDonutsNotaConsumidor" class="chart" ></canvas>
+		    				<div id="legendaGraficoNotaConsumidor"></div>
+		    				<script type="text/javascript">
+				                var options = {
+				                    responsive:true                    
+				                };
+
+				                var data = [
+				                    {
+				                        value: 5,
+				                        color:"#0585d6",
+				                        highlight: "#FF5A5E",
+				                        label: "1"
+				                    },
+				                    {
+				                        value: 6,
+				                        color:"#f1c40f",
+				                        highlight: "#FF5A5E",
+				                        label: "2"
+				                    },
+				                    {
+				                        value: 0,
+				                        color:"#2c3e50",
+				                        highlight: "#FF5A5E",
+				                        label: "3"
+				                    },
+				                    {
+				                        value: 17,
+				                        color:"#d35400",
+				                        highlight: "#FF5A5E",
+				                        label: "4"
+				                    },
+				                    {
+				                        value: 11,
+				                        color:"#8e44ad",
+				                        highlight: "#FF5A5E",
+				                        label: "5"
+				                    },
+				                    {
+				                        value: 61,
+				                        color:"#d60540",
+				                        highlight: "#FF5A5E",
+				                        label: "Não Deu Nota"
+				                    }, 
+				                ]
+								var graficoNotaConsumidor = document.getElementById("GraficoDonutsNotaConsumidor").getContext("2d");
+								var notaConsumidorEmpresaGrafico = new Chart(graficoNotaConsumidor).Doughnut(data, options);
+								legend(document.getElementById("legendaGraficoNotaConsumidor"), data);
+			            	</script>
+	    				</div>
+	    			</div>	
+	    			<div class="col l6 s1">
+	    				<div class="box">
+	    					<h5>Como Comprou/Contratou</h5>
+	    					<span>Valores em porcentagem</span>
+		    				<canvas id="GraficoDonutsComoComprou" class="chart" ></canvas>
+		    				<div id="legendaGraficoComoComprou"></div>
+		    				<script type="text/javascript">
+				                var options = {
+				                    responsive:true                    
+				                };
+
+				                var data = [
+				                    {
+				                        value: 83,
+				                        color:"#05d69d",
+				                        highlight: "#FF5A5E",
+				                        label: "Loja Física"
+				                    },
+				                    {
+				                        value: 11,
+				                        color:"#d60540",
+				                        highlight: "#FF5A5E",
+				                        label: "Não Contratou"
+				                    }, 
+				                    {
+				                        value: 6,
+				                        color:"#8e44ad",
+				                        highlight: "#FF5A5E",
+				                        label: "Domicílio"
+				                    }
+				                ]
+								var graficoComoComprou = document.getElementById("GraficoDonutsComoComprou").getContext("2d");
+								var comoComprouGrafico = new Chart(graficoComoComprou).Doughnut(data, options);
+								legend(document.getElementById("legendaGraficoComoComprou"), data);
+			            	</script>
+	    				</div>
+	    			</div>
+    			</div>
+    			<div class="row">
+	    			<div class="col l6 s1">
+	    				<div class="box">
+	    					<h5>Problema</h5>
+	    					<span>Valores em porcentagem</span>
+		    				<canvas id="GraficoDonutsProblema" class="chart" ></canvas>
+		    				<div id="legendaGraficoProblema"></div>
+		    				<script type="text/javascript">
+				                var options = {
+				                    responsive:true                    
+				                };
+
+				                var data = [
+				                    {
+				                        value: 11,
+				                        color:"#f1c40f",
+				                        highlight: "#FF5A5E",
+				                        label: "Falta de peça de reposição"
+				                    },
+				                    {
+				                        value: 11,
+				                        color:"#2c3e50",
+				                        highlight: "#FF5A5E",
+				                        label: "Má qualidade no atendimento (descortesia/ despreparo/ constrangimento)"
+				                    },
+				                    {
+				                        value: 39,
+				                        color:"#d35400",
+				                        highlight: "#FF5A5E",
+				                        label: "Oferta não cumprida/ serviço não fornecido/ venda enganosa/ publicidade enganosa"
+				                    },
+				                    {
+				                        value: 33,
+				                        color:"#8e44ad",
+				                        highlight: "#FF5A5E",
+				                        label: "Produto danificado/ não funciona - Dificuldade em trocar ou consertar no prazo de garantia"
+				                    },
+				                    {
+				                        value: 6,
+				                        color:"#d60540",
+				                        highlight: "#FF5A5E",
+				                        label: "Produto danificado/ não funciona - Falta de assistência técnica/ falta de informações sobre assistência"
+				                    }
+				                ]
+								var graficoProblema = document.getElementById("GraficoDonutsProblema").getContext("2d");
+								var problemaGrafico = new Chart(graficoProblema).Doughnut(data, options);
+								legend(document.getElementById("legendaGraficoProblema"), data);
+			            	</script>
+	    				</div>
+	    			</div>	
+	    			<div class="col l6 s1">
+	    				<div class="box">
+	    					<h5>Grupo Problema</h5>
+	    					<span>Valores em porcentagem</span>
+		    				<canvas id="GraficoDonutsGrupoProblema" class="chart" ></canvas>
+		    				<div id="legendaGraficoGrupoProblema"></div>
+		    				<script type="text/javascript">
+				                var options = {
+				                    responsive:true                    
+				                };
+
+				                var data = [
+				                    {
+				                        value: 11,
+				                        color:"#05d69d",
+				                        highlight: "#FF5A5E",
+				                        label: "Atendimento/SAC"
+				                    },
+				                    {
+				                        value: 39,
+				                        color:"#d60540",
+				                        highlight: "#FF5A5E",
+				                        label: "Contrato/Oferta"
+				                    }, 
+				                    {
+				                        value: 50,
+				                        color:"#8e44ad",
+				                        highlight: "#FF5A5E",
+				                        label: "Vício de Qualidade"
+				                    }
+				                ]
+								var graficoGrupoProblema = document.getElementById("GraficoDonutsGrupoProblema").getContext("2d");
+								var grupoProblemaGrafico = new Chart(graficoGrupoProblema).Doughnut(data, options);
+								legend(document.getElementById("legendaGraficoGrupoProblema"), data);
+			            	</script>
+	    				</div>
+	    			</div>
+    			</div>
+    			<div class="row">
+	    			<div class="col l6 s1">
+	    				<div class="box">
+	    					<h5>Assunto</h5>
+	    					<span>Valores em porcentagem</span>
+		    				<canvas id="GraficoDonutsAssunto" class="chart" ></canvas>
+		    				<div id="legendaGraficoAssunto"></div>
+		    				<script type="text/javascript">
+				                var options = {
+				                    responsive:true                    
+				                };
+
+				                var data = [
+				                    {
+				                        value: 5,
+				                        color:"#f1c40f",
+				                        highlight: "#FF5A5E",
+				                        label: "Ar condicionado e aquecedor"
+				                    },
+				                    {
+				                        value: 5,
+				                        color:"#2c3e50",
+				                        highlight: "#FF5A5E",
+				                        label: "Aves, carnes e peixes/frutos do mar"
+				                    },
+				                    {
+				                        value: 17,
+				                        color:"#d35400",
+				                        highlight: "#FF5A5E",
+				                        label: "Eletroportáteis (batedeira, liquidificador, umidificador, secador, etc)"
+				                    },
+				                    {
+				                        value: 11,
+				                        color:"#8e44ad",
+				                        highlight: "#FF5A5E",
+				                        label: "Fogão, microondas, formo elétrico, depurador de ar e coifa"
+				                    },
+				                    {
+				                        value: 17,
+				                        color:"#d60540",
+				                        highlight: "#FF5A5E",
+				                        label: "Microcomputador e laptops"
+				                    },
+				                    {
+				                        value: 5,
+				                        color:"#1abc9c",
+				                        highlight: "#FF5A5E",
+				                        label: "Perfumaria, cosmeticos e higiene pessoal"
+				                    },{
+				                        value: 5,
+				                        color:"#34495e",
+				                        highlight: "#FF5A5E",
+				                        label: "Produtos para crianças (carrinho, brinquedos, cadeira, vestuário, mamadeira, etc)"
+				                    },
+				                    {
+				                        value: 6,
+				                        color:"#A52A2A",
+				                        highlight: "#FF5A5E",
+				                        label: "Supermercados e coveniências"
+				                    },
+				                    {
+				                        value: 6,
+				                        color:"#ecf0f1",
+				                        highlight: "#FF5A5E",
+				                        label: "Tablet"
+				                    },
+				                    {
+				                        value: 11,
+				                        color:"#FF1493",
+				                        highlight: "#FF5A5E",
+				                        label: "Televisão"
+				                    },
+				                    {
+				                        value: 6,
+				                        color:"#B8860B",
+				                        highlight: "#FF5A5E",
+				                        label: "Utilidades domésticas e decoração (para limpeza, de cozinha, cama, mesa e banho, tapetes, cortinas, persianas, jardinagem, ferramentas, etc)"
+				                    },
+				                    {
+				                        value: 6,
+				                        color:"#FA8072",
+				                        highlight: "#FF5A5E",
+				                        label: "Veículos - peças e acessórios (roda, pneu, rádio, farol, etc)"
+				                    }
+				                ]
+								var graficoAssunto = document.getElementById("GraficoDonutsAssunto").getContext("2d");
+								var assuntoGrafico = new Chart(graficoAssunto).Doughnut(data, options);
+								legend(document.getElementById("legendaGraficoAssunto"), data);
+			            	</script>
+	    				</div>
+	    			</div>	
+	    			<div class="col l6 s1">
+	    				<div class="box">
+	    					<h5>Área</h5>
+	    					<span>Valores em porcentagem</span>
+		    				<canvas id="GraficoDonutsArea" class="chart" ></canvas>
+		    				<div id="legendaGraficoArea"></div>
+		    				<script type="text/javascript">
+				                var options = {
+				                    responsive:true                    
+				                };
+
+				                var data = [
+				                    {
+				                        value: 11,
+				                        color:"#05d69d",
+				                        highlight: "#FF5A5E",
+				                        label: "Alimentos"
+				                    },
+				                    {
+				                        value: 22,
+				                        color:"#d60540",
+				                        highlight: "#FF5A5E",
+				                        label: "Produtos de Telefonia e Informática"
+				                    }, 
+				                    {
+				                        value: 45,
+				                        color:"#B8860B",
+				                        highlight: "#FF5A5E",
+				                        label: "Produtos Eletrodomésticos e Eletrônicos"
+				                    },
+				                    {
+				                        value: 22,
+				                        color:"#8e44ad",
+				                        highlight: "#FF5A5E",
+				                        label: "Demais Produtos"
+				                    }
+				                ]
+								var graficoArea = document.getElementById("GraficoDonutsArea").getContext("2d");
+								var areaGrafico = new Chart(graficoArea).Doughnut(data, options);
+								legend(document.getElementById("legendaGraficoArea"), data);
+			            	</script>
+	    				</div>
+	    			</div>
     			</div>
     		</div>
     	</div>
